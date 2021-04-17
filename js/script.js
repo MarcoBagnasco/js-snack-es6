@@ -102,66 +102,6 @@
 // // Print New Array
 // console.table(newTeams)
 
-/***************************
- * SNACK 3
- ***************************/
-/**
- * Si scriva una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
- * La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri
-inseriti dall'utente
- */
-
-// Original Array
-const students = ['Paolo', 'Marco', 'Giuseppe', 'Laura', 'Marta', 'Andrea']; 
-
-let min = 0; // Start Index
-let max = 0; // End Index
-
-// Input Start Index
-do{
-    min = parseInt(prompt(`Enter a number between 0 and ${students.length - 1}`));
-    if(isNaN(min)){
-        alert('You have not entered a number');
-    } else if(!(min >= 0 && min < students.length)){
-        alert('Number out of range')
-    }
-} while(isNaN(min) || !(min >= 0 && min < students.length));
-
-// Input End Index
-do{
-    max = parseInt(prompt(`Enter a number between ${min} and ${students.length - 1}`));
-    if(isNaN(max)){
-        alert('You have not entered a number');
-    } else if(!(max >= min && max < students.length)){
-        alert('Number out of range')
-    }
-} while(isNaN(max) || !(max >= min && max < students.length));
-
-// Create New Array with filter
-const newArray = arrayFromRange(students,min,max);
-
-// Print in console
-console.log(`Original array: ${students}`);
-console.log(`New array: ${newArray}`);
-
-/*************
- * FUNCTION
- *************/
-/**
- * Return new array with element in range
- * @param {array} arr 
- * @param {number} min 
- * @param {number} max 
- * @returns 
- */
-function arrayFromRange(arr, min, max){
-    return arr.filter((element, index) => {
-        return (index >= min && index <= max);
-    });
-}
-
-
-
 // /************
 //  * FUNCTIONS
 //  ************/
@@ -174,3 +114,127 @@ function arrayFromRange(arr, min, max){
 // function randomNum(min, max){
 //     return Math.floor(Math.random() * (max - min + 1) + min);
 // }
+
+// /***************************
+//  * SNACK 3
+//  ***************************/
+// /**
+//  * Si scriva una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
+//  * La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri
+// inseriti dall'utente
+//  */
+
+// // Original Array
+// const students = ['Paolo', 'Marco', 'Giuseppe', 'Laura', 'Marta', 'Andrea']; 
+
+// let min = 0; // Start Index
+// let max = 0; // End Index
+
+// // Input Start Index
+// do{
+//     min = parseInt(prompt(`Enter a number between 0 and ${students.length - 1}`));
+//     if(isNaN(min)){
+//         alert('You have not entered a number');
+//     } else if(!(min >= 0 && min < students.length)){
+//         alert('Number out of range')
+//     }
+// } while(isNaN(min) || !(min >= 0 && min < students.length));
+
+// // Input End Index
+// do{
+//     max = parseInt(prompt(`Enter a number between ${min} and ${students.length - 1}`));
+//     if(isNaN(max)){
+//         alert('You have not entered a number');
+//     } else if(!(max >= min && max < students.length)){
+//         alert('Number out of range')
+//     }
+// } while(isNaN(max) || !(max >= min && max < students.length));
+
+// // Create New Array with filter
+// const newArray = arrayFromRange(students,min,max);
+
+// // Print in console
+// console.log(`Original array: ${students}`);
+// console.log(`New array: ${newArray}`);
+
+// /*************
+//  * FUNCTION
+//  *************/
+// /**
+//  * Return new array with element in range
+//  * @param {array} arr 
+//  * @param {number} min 
+//  * @param {number} max 
+//  * @returns 
+//  */
+// function arrayFromRange(arr, min, max){
+//     return arr.filter((element, index) => {
+//         return (index >= min && index <= max);
+//     });
+// }
+
+/***************************
+ * SNACK 3
+ ***************************/
+/**
+ * Creare array di oggetti indumenti con proprietà 'nome', 'modello', 'tipologia', 'colore'.
+ * Scrivere una funzione che generi un numero random tra 10 e 50 e lo inserisca come nuova proprietà 'prezzo' in ogni oggeto dell'array 
+ */
+
+// Object's Array
+const clothing = [
+    {
+        name: 'Vicky',
+        model: 'skinny',
+        type: 'jeans',
+        color: 'white',
+    },
+    {
+        name: 'Emily',
+        model: 'cut-out',
+        type: 'dress',
+        color: 'black',
+    },
+    {
+        name: 'John Wayne',
+        model: 'biker-boots',
+        type: 'shoes',
+        color: 'brown',
+    },
+    {
+        name: 'Laura',
+        model: 'romantic',
+        type: 'body',
+        color: 'red',
+    },
+];
+
+// Array with Price
+const clothingPrice = generatePrice(clothing, 10, 50);
+
+// Print in console
+console.log('Original Array:');
+console.table(clothing);
+console.log('\n\n\nArray with price:');
+console.table(clothingPrice);
+
+
+/*************
+ * FUNCTION
+ *************/
+/**
+ * Generate random price in a range and add it to each object in the array
+ * @param {array} arr // array of objects
+ * @param {number} min // min price
+ * @param {number} max // max price
+ * @returns 
+ */
+function generatePrice(arr, min, max){
+    
+    return arr.map(element => {
+        // Random Price
+        const price = Math.floor(Math.random() * (max - min + 1) + min);
+        return element = {...element, price};
+    });
+
+}
