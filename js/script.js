@@ -127,6 +127,17 @@ document.getElementById('gen-btn').addEventListener('click', () => {
             }
         );
     }
+
+    // Sorting by points
+    teams.sort(function(a, b){
+        return b.points - a.points;
+    });
+
+    // Sorting by fouls
+    newTeams.sort(function(a, b){
+        return b.fouls - a.fouls;
+    });
+    
     // Print arrays in HTML
     printHtml();
     printFouls(newTeams);
@@ -326,7 +337,10 @@ printClothing();
 // Array with Price
 const clothingPrice = generatePrice(clothing, 10, 50);
 
+// Price Button click
 document.getElementById('price-btn').addEventListener('click', printPrice);
+// Hide Price Button click
+document.getElementById('no-price-btn').addEventListener('click', printClothing);
 
 // Print in console
 console.log('Original Array:');
