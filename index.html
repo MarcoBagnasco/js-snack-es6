@@ -5,8 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSnacks-ES6</title>
+
+    <!-- FONTAWSOME -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==' crossorigin='anonymous'/>
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <h1>JSnacks-ES6</h1>
+    </header>
+
+    <!-- SITE MAIN -->
+    <main class="site-main">
+        <!-- SNACK 1 -->
+        <section class="snack-1">
+            <h2>Snack 1</h2>
+            <!-- Bike's Array -->
+            <div class="container">
+                <h3>Bike's Array</h3>
+                <ul id=bikes-list></ul>
+            </div>
+            <!-- Lightest Bike -->
+            <p id="light-bike"></p>
+        </section>
+
+        <!-- SNACK 2 -->
+        <section class="snack-2">
+            <h2>Snack 2</h2>
+            <!-- Teams Array -->
+            <div class="container">
+                <h3>Teams</h3>
+                <table id="teams-table"></table>
+            </div>
+            <!-- Fouls List -->
+            <ul class="list" id="fouls-list"></ul>
+            <!-- Genereta Button -->
+            <button id="gen-btn" class="btn">Generate points and fouls</button>
+        </section>
+
+        <!-- SNACK 3 -->
+        <section class="snack-3">
+            <h2>Snack 3</h2>
+            <!-- Student's Array -->
+            <div class="container">
+                <h3>Students</h3>
+                <ul class="list" id="students-list"></ul>
+            </div>
+            <div>Choose a range</div>
+            <!-- Input Box -->
+            <form class="input-box">
+                <input type="number" id="min">
+                <input type="number" id="max">
+                <input id="send-btn" type="submit" class="btn" value="Send">
+            </form>
+            <!-- New Student's Array -->
+            <div class="container">
+                <h3>Choosen Students</h3>
+                <ul class="list" id="new-students-list"></ul>
+            </div>
+        </section>
+
+        <!-- SNACK 4 -->
+        <section class="snack-4">
+            <h2>Snack 4</h2>
+            <!-- Clothing's Array -->
+            <div class="container">
+                <h3>Clothing</h3>
+                <table id="clothing-table"></table>
+            </div>
+            <!-- Price Button -->
+            <button id="price-btn" class="btn">See Price</button>
+        </section>
+
+    </main>
     
     <!-- JAVASCRIPT -->
     <script src="./js/script.js"></script>
